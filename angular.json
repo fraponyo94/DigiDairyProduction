@@ -19,14 +19,24 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
+              "src/assets/images/cow.ico",
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css",
+              "src/assets/fonts/iconic/css/material-design-iconic-font.min.css",
+              "src/assets/vendor/animate/animate.css",
+              "src/assets/vendor/css-hamburgers/hamburgers.min.css",
+              "src/assets/vendor/animsition/css/animsition.min.css",
+              "src/assets/vendor/select2/select2.min.css",
+              "src/assets/vendor/daterangepicker/daterangepicker.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/main.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -81,6 +91,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],

@@ -1,5 +1,22 @@
-<div class="container">
-  <div class="alert alert-success" role="alert">
-    <strong>Home Works!</strong>
+
+<section fxLayout="column" fxFlexAlign="stretch">
+  <div fxFlexAlign="center">
+    <p>Welcome [user Name] To Digi-Dairy Production System</p>
   </div>
-</div>
+
+  <p id="caption">This is an automated record management system for dairy production firm.
+    The system provides functionality to capture dairy farm records, generate reports  and set reminder...</p>
+
+  <mat-tab-group  (selectedTabChange)="executeSelectedChange($event)">
+    <mat-tab label="Employee Details"> 
+      <p>Operations Conserning Employee in your firm will be displayed here</p> 
+    </mat-tab>
+    <mat-tab label="Cattle">
+       <p>Details Concerning cattle to be displayed here</p>
+      </mat-tab>
+    <mat-tab label="Reports">
+       <p>Available summary reports in your system to be displayed here</p>
+      </mat-tab>
+  </mat-tab-group>
+
+</section>

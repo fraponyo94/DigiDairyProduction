@@ -1,1 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+   color: darkgray }
+
+   
+.searchSection {
+    width: 100%;
+    padding: 2em 0 1em 0;
+  }
+ 
+  .tableSection {
+    height: 100%;
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .tableSection {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+  }
+  
+  
+  
+  .mat-header-cell{
+    text-align: left;
+    font-size: 90%;
+    background-color: lightgray;
+  }
+  
+  .mat-cell {
+    text-align: left;
+  }
+
+  .options-button button{
+     margin-right: 8px;
+
+  }
+  
+  .mat-checkbox {
+      text-align: center;
+  }
+  
+  .formError {
+    color: red;
+    font-size: smaller;
+  }
+
+  .full-width-dialog .mat-dialog-container {
+    min-width: 40vw;
+    max-width: 50vw !important;
+  }

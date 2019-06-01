@@ -1,0 +1,23 @@
+.mat-card {    
+    text-align: -webkit-center;    
+}    
+
+.demo-form {    
+    min-width: 150px;    
+    max-width: 500px;    
+    width: 100%;    
+}    
+    
+.form-full-width {    
+    width: 100%;    
+}    
+    
+
+    
+mat-card {   
+      
+    margin: 2em auto;    
+    text-align: center;    
+}    
+    
+     

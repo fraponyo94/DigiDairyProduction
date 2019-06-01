@@ -1,0 +1,100 @@
+
+	<mat-grid-list cols="3" class="login-element">	
+		
+		<mat-grid-tile>		
+		</mat-grid-tile> 
+		<!-- Writing markup for login starts -->
+		<mat-grid-tile class='login-container'>
+			<div class="login-container">
+				<span class="login100-form-title">
+						Digi - Dairy Production System 
+				</span>
+				<div class="login-wrapper">
+		
+					<!-- Template Header starts -->
+					<div class="login-box-header">
+						<img class="img-responsive" src="assets/images/cow.ico">	
+					</div>
+					<!-- Template Header ends -->
+			
+					<!-- Template Body starts -->
+					<div class="login-box-body"> 
+		
+						<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>							
+								
+								<div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger">								
+										Login failed: {{errorMessage}}																	
+								</div>		
+
+							<!-- Markup for getting Username starts -->
+							<mat-grid-list cols="9" rowHeight="75px">
+								<mat-grid-tile [rowspan]="1" class="login-icon">
+									<mat-icon></mat-icon>
+								</mat-grid-tile>
+								<mat-grid-tile [colspan]="7">
+									<mat-form-field class="justifier">
+										<input  matInput placeholder="Username" type="text"  name="username" [(ngModel)]="form.username" #username="ngModel"  />
+										
+									</mat-form-field>
+								</mat-grid-tile>
+							</mat-grid-list> 
+							<!-- Markup for getting Username ends -->
+			
+							<!-- Markup for getting Password starts -->
+							<mat-grid-list cols="9" rowHeight="100px">
+								<mat-grid-tile [rowspan]="1"  class="login-icon">
+									<mat-icon></mat-icon>
+								</mat-grid-tile>
+								<mat-grid-tile [colspan]="7">
+									<mat-form-field class="justifier">
+											<input  type="password" name="password" [(ngModel)]="form.password" #password="ngModel" matInput placeholder="Password"/>
+										
+									</mat-form-field>
+								</mat-grid-tile>
+							</mat-grid-list>
+							<!-- Markup for getting Password ends -->
+			
+							<!-- <button md-raised-button class="login-button"> 
+								<mat-icon>input</mat-icon> Login
+							</button> -->
+							<div class="container-login100-form-btn">
+									<div class="wrap-login100-form-btn">
+										<div class="login100-form-bgbtn"></div>
+										<button  [disabled]="loading" class="login100-form-btn">
+											Login
+										</button>
+										<img *ngIf="loading" class="pl-3" 
+										src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/
+										hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbE
+										xwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsa
+										qHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZ
+										BqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfk
+										ECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQA
+										AADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZ
+										nFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7H
+										cQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" /> 
+									</div>
+								
+								<div class="text-center ">
+										<span class="txt1">
+											Forgot your password?
+										</span>
+					
+										<a class="txt2" href="#">
+											Reset here
+										</a>
+								</div>
+							</div>
+							
+						</form>
+					</div>
+	
+				</div>
+				<!-- Template Body ends -->
+				
+			</div>
+		</mat-grid-tile>
+		<!-- Writing markup for login ends -->
+		<mat-grid-tile></mat-grid-tile>
+	
+	</mat-grid-list>
