@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatIconRegistry } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  
   @Output() public sidenavToggle = new EventEmitter();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,iconRegistry: MatIconRegistry, sanitizer: DomSanitizer) {
+    iconRegistry.addSvgIcon(
+      'logOut',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/logout.svg'));
+   }
 
   ngOnInit() {
   }

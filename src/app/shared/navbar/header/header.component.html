@@ -5,22 +5,119 @@
       </button>
   </div>
   <div>
-      <a routerLink="/home">Dairy Production System</a>
+      <a routerLink="/home">Digi-Dairy Production System</a>
   </div>
-  <div fxFlex="80%" fxLayout fxLayoutAlign="end" fxHide.xs>
-      <ul fxLayout fxLayoutGap="30px" class="navigation-items">
-          <li>
-              <a routerLink="/employee" routerLinkActive="active-item">Employee</a>
-          </li>
-          <li>
-              <a routerLink="/">Cattle</a>
-          </li>
-          <li>
-            <a routerLink="/">Breeding</a>
-        </li>
-        <li>
-            <a routerLink="/">Health</a>
-        </li>
-      </ul>
+  <div fxFlex="100%" fxLayout    fxLayoutAlign="center"  fxHide.xs>
+      <div >
+        <ul fxLayout fxLayoutGap="30px"  class="navigation-items"  id="navmenu">
+            <li  id="dropdownButton">
+                    <a >Register</a>
+                    <ul class="sub1">
+                        <li >
+                            <a routerLink="/employee" routerLinkActive="active-item">Employee</a>                       
+                        </li>
+                        <li >
+                            <a routerLink="/add/cattle" routerLinkActive="active-item">Cattle</a>                       
+                        </li>
+                       
+                        <li >
+                            <a  routerLinkActive="active-item">Sale</a> 
+                            <ul class="sub2">
+                                <li >
+                                    <a routerLink="#" routerLinkActive="active-item">Cattle</a>                       
+                                </li>
+                                <li >
+                                    <a routerLink="#" routerLinkActive="active-item">Calf</a>                       
+                                </li>
+                            </ul>                           
+                        </li> 
+                    </ul>
+            </li>
+    
+            <li>
+                <a>Records</a> 
+                <ul class="sub1">
+                        <li >
+                            <a routerLink="/milking" routerLinkActive="active-item">Milking</a>                       
+                        </li>
+                        <li >
+                             <a routerLink="/breeding" routerLinkActive="active-item">Breeding</a>                        
+                         </li>
+                       
+                        <li >
+                            <a routerLinkActive="active-item">Health</a>  
+                            <ul class="sub2">
+                                    <li >
+                                        <a routerLink="/health/cattle" routerLinkActive="active-item">Cattle</a>                       
+                                    </li>
+                                    <li >
+                                        <a routerLink="/health/calf" routerLinkActive="active-item">Calf</a>                       
+                                    </li>
+                            </ul>                     
+                        </li>
+                        <li >
+                        <a routerLink="/mortality" routerLinkActive="active-item">Mortality</a>                       
+                        </li>
+                        <li >
+                            <a routerLink="/expenses" routerLinkActive="active-item">Expenses</a>                       
+                    </li>
+                    </ul>
+
+            </li>
+            <li>
+                <a routerLinkActive="active-item">Reports</a>
+                <ul class="sub1">
+                    <li >
+                        <a  routerLinkActive="active-item">Finance</a>  
+                        <ul class="sub2">
+                            <li >
+                                <a routerLink="/finance/cash-income-report" routerLinkActive="active-item">Income</a>                       
+                            </li>
+                            <li >
+                                <a routerLink="/finance/expenses-report" routerLinkActive="active-item">Expenses Report</a>                       
+                            </li>
+                        </ul>                       
+                    </li>
+                    <li>
+                        <a  routerLinkActive="active-item">Production</a> 
+                        <ul class="sub2">
+                            <li >
+                                <a routerLink="#" routerLinkActive="active-item">Milk</a>                       
+                            </li>
+                            <li >
+                                <a routerLink="#" routerLinkActive="active-item">Breeding</a>                       
+                            </li>
+                            <li >
+                              <a routerLink="#" routerLinkActive="active-item">Mortality</a>                       
+                            </li>
+                        </ul>                        
+                    </li>
+                    <li >
+                        <a routerLink="#" routerLinkActive="active-item">Veterinary</a>                        
+                    </li>
+                           
+
+                </ul>
+            </li>
+
+            <li>
+                <a routerLink="#"  routerLinkActive="active-item">Help</a>
+            </li>
+            
+        </ul>
+    </div>  
+
+    <div fxLayout="row"    fxLayoutAlign="end"  fxHide.xs>
+        <button mat-icon-button (click)="onToggleSidenav()" >
+            <mat-icon svgIcon="logOut" aria-hidden="false"  color="accent" aria-label="Log out SVG icon"></mat-icon>
+            Log Out
+        </button>
+    </div>
+    
   </div>
-</mat-toolbar>
+
+  
+
+  
+ 
+</mat-toolbar> 

@@ -41,9 +41,6 @@ export class AddEmployeeComponent {
   //  Processes form data and sends it to the server and db.
 
   public save(addEmployeeForm) {
-
-    
-
     if (this.addEmployeeForm.addEditEmployeeForm.valid) {
 
     const enteredData = this.addEmployeeForm.addEditEmployeeForm.value;

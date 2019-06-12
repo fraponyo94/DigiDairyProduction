@@ -1,0 +1,41 @@
+/* .mat-card {    
+    text-align: -webkit-center;    
+}    
+
+.demo-form {    
+    min-width: 150px;    
+    max-width: 500px;    
+    width: 100%;    
+}    
+    
+.form-full-width {    
+    width: 100%;    
+}    
+    
+
+    
+mat-card {   
+      
+    margin: 2em auto;    
+    text-align: center;    
+}    
+
+mat-form-field{  
+    width: 100%;
+    border-radius: 4px; 
+    padding-left: 16px;
+    /* border: 2px solid #f2f2f2; 
+} */
+
+
+/* .form{
+    background:rgb(250, 248, 250) none repeat scroll 0% 0%; 
+} */
+/* 
+mat-card-content form {
+   
+} */
+
+
+
+

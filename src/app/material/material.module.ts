@@ -6,7 +6,8 @@ import { MatTabsModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatBu
          MatDialogModule,
          MatRadioModule,
          MatSlideToggleModule,
-         MatGridListModule} from '@angular/material';
+         MatGridListModule,
+         MatAutocompleteModule} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { MatTabsModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatBu
     MatSidenavModule,
     MatRadioModule,     
     MatSlideToggleModule,
-    MatGridListModule
+    MatGridListModule,
+    MatAutocompleteModule
   
   ],
   exports: [
@@ -61,7 +63,8 @@ import { MatTabsModule, MatSidenavModule, MatToolbarModule, MatIconModule, MatBu
     MatSidenavModule,
     MatRadioModule,
     MatSlideToggleModule,
-    MatGridListModule
+    MatGridListModule,
+    MatAutocompleteModule
   ],
   declarations: []
 })

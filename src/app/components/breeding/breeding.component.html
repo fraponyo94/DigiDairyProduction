@@ -1,0 +1,125 @@
+<!-- section -->
+<section class="main-cointainer" fxLayout="row wrap" fxLayoutAlign="center">
+  <!-- start of card -->     
+    <mat-card fxFlex="90%" fxFlex.xs="100%" >
+     
+        <mat-card-header  fxLayout="row" fxLayoutAlign="space-around center"  >
+        
+          <mat-card-title  >Add Cattle Breeding</mat-card-title>    
+
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="breedingForm"  (ngSubmit)="onSubmit()"  autocomplete="off"  fxLayout="column wrap"
+                  fxLayoutAlign="center center" fxLayoutGap="10px">
+              
+                  <div class="row" formGroupName="cow">
+                      <div class="col">
+                        <mat-form-field appearance="outline" class="form-full-width" >
+                          <mat-label>select Cow</mat-label>
+                          <mat-select  placeholder="---Select one---" type="text" id="cowTag"
+                          formControlName="cowTag" required >                              
+                                <mat-option *ngFor="let option of cattles | async" [value]="option.cowTag">
+                                  {{option.cowTag}}
+                                </mat-option>                            
+                          </mat-select>
+                        </mat-form-field> 
+                      </div>
+                  
+                </div>            
+             
+             
+                <div class="row"   > 
+                  <div class="col">                      
+                      <mat-form-field appearance="outline" >
+                          <mat-label>Breeding date</mat-label>
+                          <input matInput [matDatepicker]="picker" placeholder="Breeding Date" formControlName="date" id="date"
+                            readonly (click)="picker.open()">
+                          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                          <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>                        
+                  </div>
+                <!-- </div>
+  
+                 <div class="row "> -->  
+                      <div class="col">
+                          <mat-form-field appearance="outline" >
+                              <mat-label>Due date</mat-label>
+                              <input matInput [matDatepicker]="picker1" placeholder="Due Date" formControlName="dueDate" id="dueDate"
+                                readonly (click)="picker1.open()">
+                              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                              <mat-datepicker #picker></mat-datepicker>
+                           </mat-form-field>
+                      </div>
+      
+                  </div>
+                
+               <div class="row">                     
+                  <div >
+                    <mat-form-field appearance="outline" class="form-full-width" >
+                      <mat-label>Method of Insemination</mat-label>
+                      <textarea matInput   class="inputField" type="text" id="methodOfInsemination"
+                          formControlName="methodOfInsemination"  placeholder="Describe Method of Insemination Used" >
+                        </textarea>                     
+                    </mat-form-field> 
+                  </div>
+               </div>
+<!-- 
+                <div class="row">           
+                  <div class="col">
+                      <mat-form-field appearance="outline" class="form-full-width" >
+                        <mat-label>Servicing Bull</mat-label>
+                        <input matInput  class="inputField" type="text" id="serviceBull"
+                            formControlName="serviceBull"  placeholder="Servicing Bull" />
+                       
+                      </mat-form-field> 
+                   </div>
+                              
+                </div> -->
+                
+                <div class="row">                     
+                  <div class="col">
+                      <mat-form-field appearance="outline"  class="form-full-width"> 
+                          <mat-label>Reproductive Condition</mat-label>                  
+                          <textarea matInput  class="inputField" type="text" id="reproductiveCondition"
+                          formControlName="reproductiveCondition"  placeholder="Describe Reproduction Condition" >
+                          </textarea>
+                      </mat-form-field>
+                   
+                  </div>
+              </div>
+              <div class="row">                <!-- <div class="col">
+                    <mat-checkbox   formControlName="isReproductiveTreatmentOffered">Purchased </mat-checkbox>
+                </div> -->
+
+              
+                <div class="col">
+                    <mat-form-field appearance="outline"  class="form-full-width"> 
+                        <mat-label>Reproductive Treatment offered</mat-label>                  
+                        <textarea matInput  class="inputField" type="text" id="reproductiveTreatment"
+                        formControlName="reproductiveTreatment"  placeholder="Optional ,Enter Reproductive TreatMent Offered" >
+                        </textarea>
+                    </mat-form-field>
+                 
+                </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="50px">
+                    <button  mat-raised-button color="primary">Sava</button>   
+                    <button mat-raised-button (click)="reset()">Reset </button>
+                 </div>
+                    
+              <!-- </div> -->
+            </form>
+        
+        </mat-card-content>
+
+    
+
+    </mat-card>
+    <!-- End of card -->
+
+</section>
+<!-- End of section     -->
+ 
+ 
+
+

@@ -1,0 +1,97 @@
+<!-- section -->
+<section class="main-cointainer" fxLayout="row wrap" fxLayoutAlign="center">
+  <!-- start of card -->     
+    <mat-card fxFlex="90%" fxFlex.xs="100%" >
+     
+        <mat-card-header fxLayout="row" fxLayoutAlign="space-around center"   >
+        
+          <mat-card-title >Add Milking Record</mat-card-title>    
+
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="milkingForm"  (ngSubmit)="onSubmit()"  autocomplete="off"  fxLayout="column wrap"
+                  fxLayoutAlign="center center" fxLayoutGap="10px">
+
+                  <div class="row" >
+                      <div class="col" formGroupName="cow">
+                        <mat-form-field appearance="outline"  >
+                          <mat-label>select Cow</mat-label>
+                          <mat-select  placeholder="---Select one---" type="text" id="cowTag"
+                          formControlName="cowTag" required >                              
+                                <mat-option *ngFor="let option of cattles | async" [value]="option.cowTag">
+                                  {{option.cowTag}}
+                                </mat-option>                            
+                          </mat-select>
+                        </mat-form-field> 
+                      </div>                  
+                <!-- </div>                      
+             
+               
+                <div class="row" >  -->
+
+                    <div class="col">                      
+                        <mat-form-field appearance="outline"  >
+                            <mat-label>Milking date</mat-label>
+                            <input matInput [matDatepicker]="picker" placeholder="Milking Date" formControlName="date" id="date"
+                              readonly (click)="picker.open()">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                        
+                    </div>
+                  </div>    
+                
+               <div class="row">                     
+                  <div class="col" >
+                    <mat-form-field appearance="outline" class="form-full-width" >
+                      <mat-label>First Milking Session</mat-label>
+                      <input matInput   class="inputField" type="number" id="firstMilking"
+                          formControlName="firstMilking"  placeholder="Enter first Milking Amount"  required />
+                                            
+                    </mat-form-field> 
+                  </div>
+               </div>
+
+               <div class="row">                     
+                  <div class="col" >
+                    <mat-form-field appearance="outline" class="form-full-width" >
+                      <mat-label>Second Milking Session</mat-label>
+                      <input matInput   class="inputField" type="number" id="secondMilking"
+                          formControlName="secondMilking"  placeholder="Amount for second Milking"  />
+                                            
+                    </mat-form-field> 
+                  </div>
+               </div>
+
+               <div class="row">                     
+                  <div class="col" >
+                    <mat-form-field appearance="outline" class="form-full-width" >
+                      <mat-label>other Milking Session</mat-label>
+                      <input matInput   class="inputField" type="number" id="otherMilking"
+                          formControlName="secondMilking"  placeholder="Amount for other Milking"  />
+                                            
+                    </mat-form-field> 
+                  </div>
+               </div>
+
+               <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="50px">
+                  <button  mat-raised-button color="primary">Save</button>   
+                  <button mat-raised-button (click)="reset()">Reset </button>
+               </div>
+                    
+              
+            </form>
+        
+        </mat-card-content>
+
+      
+
+    </mat-card>
+    <!-- End of card -->
+
+</section>
+<!-- End of section     -->
+ 
+ 
+
+

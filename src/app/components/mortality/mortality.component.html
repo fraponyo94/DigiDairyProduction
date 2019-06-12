@@ -1,0 +1,91 @@
+<!-- section -->
+<section class="main-cointainer" fxLayout="row wrap" fxLayoutAlign="center">
+    <!-- start of card -->     
+      <mat-card fxFlex="90%" fxFlex.xs="100%" >
+       
+          <mat-card-header fxLayout="row" fxLayoutAlign="space-around center"   >
+          
+            <mat-card-title > Add Mortality Records</mat-card-title>    
+  
+          </mat-card-header>
+          <mat-card-content>
+              <form [formGroup]="mortalityForm"  (ngSubmit)="onSubmit()"  autocomplete="off"  fxLayout="column wrap"
+                    fxLayoutAlign="center center" fxLayoutGap="10px">
+
+                    <div class="row" >
+                        <div class="col" formGroupName="cow">
+                          <mat-form-field appearance="outline" class="form-full-width" >
+                            <mat-label>-------select Cow-----</mat-label>
+                            <mat-select  placeholder="---Select one---" type="text" id="cowTag"
+                            formControlName="cowTag" required >                              
+                                  <mat-option *ngFor="let option of cattles | async" [value]="option.cowTag">
+                                    {{option.cowTag}}
+                                  </mat-option>                            
+                            </mat-select>
+                          </mat-form-field> 
+                        </div>                  
+                  </div>                             
+               
+                 
+                  <div class="row" > 
+  
+                      <div class="col">                      
+                          <mat-form-field appearance="outline" class="form-full-width" >
+                              <mat-label>Mortality date</mat-label>
+                              <input matInput [matDatepicker]="picker" placeholder="Milking Date" formControlName="date" id="date"
+                                readonly (click)="picker.open()">
+                              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                              <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>
+                          
+                      </div>                     
+                   
+                    </div>   
+                    
+                  
+                  <div class="row">                     
+                      <div class="col" >
+                        <mat-form-field appearance="outline" class="form-full-width" >
+                          <mat-label>Cause of Death</mat-label>
+                          <textarea matInput   class="inputField" type="text" id="findings"
+                              formControlName="findings"  placeholder="Enter cause of death"  required >
+                            </textarea>
+                                                
+                        </mat-form-field> 
+                      </div>
+                  </div>
+  
+                
+                  <div class="row">                     
+                      <div class="col" >
+                        <mat-form-field appearance="outline" class="form-full-width" >
+                          <mat-label>Post Mortem report</mat-label>
+                          <textarea matInput   class="inputField" type="text" id="postMortemReport"
+                              formControlName="postMortemReport"  placeholder="Enter post Mortem Report"  required >
+                            </textarea>
+                                                
+                        </mat-form-field> 
+                      </div>
+                  </div>
+  
+                 
+                  <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="50px">
+                      <button  mat-raised-button color="primary">Save</button>   
+                      <button mat-raised-button (click)="reset()">Reset </button>
+                  </div>
+                
+              </form>
+          
+          </mat-card-content>
+  
+  
+      </mat-card>
+      <!-- End of card -->
+  
+  </section>
+  <!-- End of section     -->
+   
+   
+  
+  
+  

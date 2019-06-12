@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { FormsModule ,ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule }  from '@angular/forms';
 
 import { HttpClientModule,  HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -36,7 +36,21 @@ import { AddEmployeeComponent } from './components/employees/add-employee/add-em
 import { AddEditFormComponent } from './components/employees/add-edit-form/add-edit-form.component';
 import { AuthInterceptor } from './auth/auth-interceptor';
 import { AuthService } from './auth/auth-services/auth.service';
-import { AddCattle } from './components/cattle/add-cattle.components/add-cattle.components.component';
+import { AddCattleComponent } from './components/cattle/add-cattle.components/add-cattle.component';
+import { BreedingComponent } from './components/breeding/breeding.component';
+import { DatePipe } from '@angular/common';
+
+import { HealthComponent } from './components/health/health.component';
+import { MortalityComponent } from './components/mortality/mortality.component';
+import { ExpensesComponent } from './components/expenses/expenses.component';
+import { MilkingComponent } from './components/milking/milking.component';
+import { CalfComponent } from './components/calf/calf.component';
+import { CattleHealthComponent } from './components/cattle-health/cattle-health.component';
+import { CalfHealthComponent } from './components/calf-health/calf-health.component';
+import { FinanceComponent } from './components/finance/finance.component';
+import { IncomeComponent } from './components/finance/income/income.component';
+import { FinanceExpenseComponent } from './components/finance/finance-expense/finance-expense.component';
+import { CattleSaleComponent } from './components/cattle-sale/cattle-sale.component';
 
 
 @NgModule({
@@ -62,7 +76,19 @@ import { AddCattle } from './components/cattle/add-cattle.components/add-cattle.
     EditEmployeeComponent,
     AddEmployeeComponent,
     AddEditFormComponent,
-    AddCattle.ComponentsComponent
+    AddCattleComponent,
+    BreedingComponent,
+    MilkingComponent,
+    HealthComponent,
+    MortalityComponent,
+    ExpensesComponent,
+    CalfComponent,
+    CattleHealthComponent,
+    CalfHealthComponent,
+    FinanceComponent,
+    IncomeComponent,
+    FinanceExpenseComponent,
+    CattleSaleComponent
     
   ],
   imports: [
@@ -87,7 +113,8 @@ import { AddCattle } from './components/cattle/add-cattle.components/add-cattle.
     ConfirmService,
     MessagesService,
     FormErrorsService,
-    AuthService
+    AuthService,
+    DatePipe
    
   ],
   bootstrap: [AppComponent],

@@ -1,0 +1,151 @@
+<!-- section -->
+<section class="main-cointainer" fxLayout="row wrap" fxLayoutAlign="center">
+    <!-- start of card -->     
+      <mat-card fxFlex="90%" fxFlex.xs="100%" >
+       
+          <mat-card-header   >
+          
+            <mat-card-title fxLayoutAlign="space-around center"  >Mortality Records</mat-card-title>    
+  
+          </mat-card-header>
+          <mat-card-content>
+              <form [formGroup]="healthForm"  (ngSubmit)="onSubmit()"  autocomplete="off"  fxLayout="column wrap"
+                    fxLayoutAlign="center center" fxLayoutGap="40px">
+  
+                  <!-- <div class="row">
+                      <div class="col">           
+                          <mat-select placeholder="--Select Cow--" appearance="outline" class="form-full-width">                            
+                              <mat-option *ngFor="let option of filteredOptions | async" [value]="option.cowTag">
+                                  {{option.cowTag}}
+                                </mat-option>
+                                 <mat-option>-- Role --</mat-option>    
+                              <mat-option value="1">Admin</mat-option>    
+                              <mat-option value="2">employee</mat-option>                  
+                          </mat-select> 
+                        </div>             
+                  </div>                              -->
+               
+                 
+                  <div class="row" > 
+  
+                      <div class="col">                      
+                          <mat-form-field appearance="outline" class="form-full-width" >
+                              <mat-label>Date of Treatment</mat-label>
+                              <input matInput [matDatepicker]="picker" placeholder="Enter Date of treatment" formControlName="date" id="date"
+                                readonly (click)="picker.open()">
+                              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                              <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>
+                          
+                      </div>                    
+                       
+                    </div>   
+                    
+                  
+                  <div class="row">                     
+                      <div class="col" >
+                        <mat-form-field appearance="outline" class="form-full-width" >
+                          <mat-label>Brief Health History </mat-label>
+                          <textarea matInput   class="inputField" type="text" id="history"
+                              formControlName="history"  placeholder="Enter Brief Health History"   >
+                            </textarea>
+                                                
+                        </mat-form-field> 
+                      </div>
+                  </div>
+
+                  <div class="row">                     
+                      <div class="col" >
+                        <mat-form-field appearance="outline" class="form-full-width" >
+                          <mat-label>Animal symptoms </mat-label>
+                          <textarea matInput   class="inputField" type="text" id="symptoms"
+                              formControlName="symptoms"  placeholder="Enter Symptoms identified"   >
+                            </textarea>
+                                                
+                        </mat-form-field> 
+                      </div>
+                  </div>
+
+                  <div class="row">                     
+                      <div class="col" >
+                        <mat-form-field appearance="outline" class="form-full-width" >
+                          <mat-label>Diagnosis </mat-label>
+                          <textarea matInput   class="inputField" type="text" id="diagnosis"
+                              formControlName="diagnosis"  placeholder="Enter diagnosis made"   >
+                            </textarea>
+                                                
+                        </mat-form-field> 
+                      </div>
+                  </div>
+
+                  <div class="row">                     
+                      <div class="col" >
+                        <mat-form-field appearance="outline" class="form-full-width" >
+                          <mat-label>Treatment Administered </mat-label>
+                          <textarea matInput   class="inputField" type="text" id="treatment"
+                              formControlName="treatment"  placeholder="Describe treatment administered"   >
+                            </textarea>
+                                                
+                        </mat-form-field> 
+                      </div>
+                  </div>
+  
+                
+                  <div class="row">                     
+                      <div class="col" >
+                        <mat-form-field appearance="outline" class="form-full-width" >
+                          <mat-label>Name of veterinary Doctor</mat-label>
+                          <input matInput   class="inputField" type="text" id="nameOfVeterinaryDoctor"
+                              formControlName="nameOfVeterinaryDoctor"  placeholder="Enter Name of Veterinary Doctor"  />
+                           
+                                                
+                        </mat-form-field> 
+                      </div>
+
+                      <div class="col" >
+                          <mat-form-field appearance="outline" class="form-full-width" >
+                            <mat-label>Contact of veterinary Doctor</mat-label>
+                            <input matInput   class="inputField" type="text" id="contactofVeterinaryDoctor"
+                                formControlName="contactofVeterinaryDoctor"  placeholder="Enter contact of Veterinary Doctor"  />                             
+                                                  
+                          </mat-form-field> 
+                        </div>
+                  </div>
+                  
+                  <div class="row">                     
+                      <div class="col" >
+                        <mat-form-field appearance="outline" class="form-full-width" >
+                          <mat-label>Cost of Medication</mat-label>
+                          <input matInput   class="inputField" type="text" id="costOfTreatMent"
+                              formControlName="costOfTreatMent"  placeholder="Enter Name of Veterinary Doctor"  />
+                           
+                                                
+                        </mat-form-field> 
+                      </div>
+                    </div>
+  
+                 
+                
+                 <button  mat-raised-button color="primary">Add Cattle</button>   
+                      
+                
+              </form>
+          
+          </mat-card-content>
+  
+          <mat-card-actions align="center">           
+              
+              
+          </mat-card-actions>  
+  
+  
+      </mat-card>
+      <!-- End of card -->
+  
+  </section>
+  <!-- End of section     -->
+   
+   
+  
+  
+  

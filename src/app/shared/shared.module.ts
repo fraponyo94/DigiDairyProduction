@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ErrorDialogComponent,SuccessDialogComponent } from './index';
+import { LogOutIconSVGComponent } from './navbar/log-out-icon-svg/log-out-icon-svg.component';
 
 
 
@@ -20,7 +21,7 @@ import { ErrorDialogComponent,SuccessDialogComponent } from './index';
   ],
   declarations: [
     SuccessDialogComponent, 
-    ErrorDialogComponent,
+    ErrorDialogComponent, LogOutIconSVGComponent,
    
 
   ],

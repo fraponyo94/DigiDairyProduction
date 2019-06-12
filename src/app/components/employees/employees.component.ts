@@ -29,10 +29,10 @@ export class EmployeesComponent implements AfterViewInit {
 
 private idColumn = 'employeeId';
 
-
+//employees: observable<any>; 
 private dsData: any;
 
- //dataSource: MatTableDataSource<EmployeeModel>;
+ // dataSource: MatTableDataSource<EmployeeModel>;
 @ViewChild(MatPaginator) paginator: MatPaginator;
 
   public dataLength: number;
@@ -60,16 +60,16 @@ private dsData: any;
   public searchTerm$ = new Subject<string>();
 
   constructor(
-    private httpService:  EmployeeService,
+    private httpService: EmployeeService,
     public dialog: MatDialog,
     private confirmService: ConfirmService,
     private messagesService: MessagesService
-    
+
     ) {
 
 
     // ------  LAST NAME SERCH -------------
-  
+
     this.httpService.nameSearch(this.searchTerm$)
     .subscribe(data => {
         this.dataLength = data.length;
@@ -77,9 +77,7 @@ private dsData: any;
       });
     }
 
-    // ngOnInit() {
-    //   this.getAllRecords();
-    // }
+
 
   ngAfterViewInit() {
       this.dataSource.paginator = this.paginator;
@@ -88,13 +86,14 @@ private dsData: any;
       }, 200);
     }
 
+// tslint:disable-next-line: max-line-length
 /*  The Angular Material Data Table docs recommended http with paginator setup below reloads the earlier query when the user alternates between multiple queries in one view.  More queries on the page makes this worse fast.  My suggested code here works.
 
 */
 
   private getAllRecords(): any {
     // Kills the paginator if omitted.
-    this.dataSource.paginator = this.paginator;  
+    this.dataSource.paginator = this.paginator;
 
     merge(this.paginator.page).pipe(
       // Tap called only with page forward.
@@ -108,10 +107,10 @@ private dsData: any;
     )
 
     .subscribe(data => {
-      console.log(data.length)
-       const employees: Employee[] = data;
+      console.log(data.length);
+      const employees: Employee[] = data;
       this.dataLength = employees.length;
-      
+
       this.dataSource.data = employees;
     },
     (err: HttpErrorResponse) => {
@@ -123,7 +122,7 @@ private dsData: any;
 
 
   public addRecord() {
-    this.dialog.open(this.addEmployeeComponent,{panelClass: 'full-width-dialog'});
+    this.dialog.open(this.addEmployeeComponent, {panelClass: 'full-width-dialog'});
   }
 
 
@@ -131,7 +130,7 @@ private dsData: any;
 
   public editRecord(recordId) {
     this.dialog.open(this.editEmployeeComponent, {
-      data: {recordId: recordId, idColumn: this.idColumn, paginator: this.paginator, dataSource: this.dataSource},
+      data: {recordId, idColumn: this.idColumn, paginator: this.paginator, dataSource: this.dataSource},
       panelClass: 'full-width-dialog'
     });
   }
@@ -142,13 +141,13 @@ private dsData: any;
 
   public deleteRecord(recordId) {
     const dsData = this.dataSource.data;
-   
+
     const record = dsData.find(obj => obj[this.idColumn] === recordId);
-    
+
     // Call the confirm dialog component
     this.confirmService.confirm(name, 'Do you want to delete,[employee Name]').pipe(
       switchMap(res => {if (res === true) {
-        
+
         return this.httpService.deleteEmployee(recordId);
       }}))
       .subscribe(
@@ -166,7 +165,7 @@ private dsData: any;
   }
 
 // Remove the deleted row from the data table. Need to remove from the downloaded data first.
-  private deleteRowDataTable (recordId, idColumn, paginator, dataSource) {
+  private deleteRowDataTable(recordId, idColumn, paginator, dataSource) {
     this.dsData = dataSource.data;
     const itemIndex = this.dsData.findIndex(obj => obj[idColumn] === recordId);
     dataSource.data.splice(itemIndex, 1);
@@ -181,7 +180,7 @@ private dsData: any;
     // push the id's into an array then call it with the button.
     return this.idArray.push(selectedMember);
   }
- 
+
   // Called by the Show Selected button.
   public getAllSelected() {
     this.memberArray = [];
@@ -189,13 +188,13 @@ private dsData: any;
     const ds = this.dataSource.data;
     const property = 'id';
 
-    this.idArray.forEach(function (id, i) {
+    this.idArray.forEach(function(id, i) {
 
       // Need to match ids in idArray with dataSource.data.
        const memberId: number = id;  // Extracts member id from selection array.
 
       // Search dataSource for each member_id and push those selected into a new data object.
-      ds.forEach(function (member, index) {
+       ds.forEach(function(member, index) {
 
         if (ds[index][property] === memberId) {
           tempArray.push(member);
